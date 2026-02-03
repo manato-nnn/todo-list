@@ -1,0 +1,144 @@
+:root {
+  --text: #333;
+  --bg: #eee;
+  --btn: #444;
+}
+
+input[type="checkbox"] {
+  accent-color: #555;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ccc;
+    --bg: #111;
+    --btn: #bbb;
+  }
+
+  input[type="checkbox"] {
+    accent-color: #aaa;
+  }
+}
+
+body {
+  color: var(--text);
+  background-color: var(--bg);
+  font-size: 1rem;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  transition: .5s;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem;
+}
+
+.checkbox {
+  transform: scale(2);
+  margin: 1rem 2rem;
+  cursor: pointer;
+}
+
+textarea {
+  color: var(--text);
+  font-size: 1.5rem;
+  padding: .5rem;
+  flex: 1;
+  border-bottom: thin solid var(--btn);
+  outline: none;
+  resize: none;
+  overflow: hidden;
+}
+
+.del-btn {
+  position: relative;
+  width: 4rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.del-btn::before,
+.del-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: var(--btn);
+}
+
+.del-btn::before {
+  transform: rotate(45deg);
+}
+
+.del-btn::after {
+  transform: rotate(-45deg);
+}
+
+#add-btn {
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  cursor: pointer;
+}
+
+#add-btn::before,
+#add-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: var(--btn);
+}
+
+#add-btn::after {
+  transform: rotate(90deg);
+}
+
+.new {
+  animation: fadeIn ease .25s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.del {
+  animation: fadeOut ease .125s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+}
