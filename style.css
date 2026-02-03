@@ -93,7 +93,6 @@ textarea {
 }
 
 #add-btn {
-  background-color: var(--bg);
   position: relative;
   height: 4rem;
   width: 4rem;
@@ -143,3 +142,4 @@ footer {
     width: 100%;
   }
 }
+
